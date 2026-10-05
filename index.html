@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marie-dle</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<header>
+  <div class="left">
+    <button class="icon-btn" id="menuBtn" aria-label="Modus wählen">☰ Modus</button>
+  </div>
+  <h1>MARIE-DLE</h1>
+  <div class="right">
+    <button class="icon-btn" id="helpBtn" aria-label="Hilfe">Hilfe</button>
+    <button class="icon-btn" id="statsBtn" aria-label="Statistik">Statistik</button>
+  </div>
+  <div id="modeLabel"></div>
+</header>
+
+<main>
+  <div id="board"></div>
+  <div id="keyboard"></div>
+</main>
+
+<div id="toast"></div>
+
+<div class="overlay" id="menuModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <h2>Modus</h2>
+    <h3>Sprache</h3>
+    <div class="seg" id="segLang"></div>
+    <h3>Wortlänge</h3>
+    <div class="seg" id="segLen"></div>
+    <h3>Schwierigkeit</h3>
+    <div class="seg" id="segDiff"></div>
+    <div class="hint" id="diffHint"></div>
+    <div class="actions">
+      <button class="btn" id="playBtn">Spielen</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="helpModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <h2>So wird gespielt</h2>
+    <p>Errate das Wort in 6 Versuchen. Jeder Versuch muss ein echtes Wort mit der gewählten Länge sein.</p>
+    <div class="example">
+      <div class="tile correct">K</div><div class="tile">A</div><div class="tile">T</div><div class="tile">Z</div><div class="tile">E</div>
+    </div>
+    <p><b>K</b> ist im Wort und an der richtigen Stelle.</p>
+    <div class="example">
+      <div class="tile">B</div><div class="tile present">L</div><div class="tile">U</div><div class="tile">M</div><div class="tile">E</div>
+    </div>
+    <p><b>L</b> ist im Wort, aber an einer anderen Stelle.</p>
+    <div class="example">
+      <div class="tile">N</div><div class="tile">A</div><div class="tile">C</div><div class="tile absent">H</div><div class="tile">T</div>
+    </div>
+    <p><b>H</b> kommt im Wort nicht vor.</p>
+    <p class="note">Unter <b>☰ Modus</b> wählst du Sprache, Wortlänge (4–7) und Schwierigkeit. Leicht, mittel und schwer nutzen die 4.000, 20.000 bzw. 100.000 häufigsten Wörter der Sprache als mögliche Lösungen.</p>
+    <p class="note">Jeder Modus hat ein eigenes Tageswort und eine eigene Statistik. Mit „Neues Wort“ spielst du danach beliebig weiter.</p>
+    <p class="note">Sonderzeichen: Deutsch hat Ä, Ö, Ü als eigene Buchstaben (Wörter mit ß kommen nicht vor), Finnisch hat Ä und Ö. Im Französischen werden Akzente ignoriert (É = E).</p>
+    <p class="note">Wörter werden pro Sprache einmalig online geladen und dann im Browser gespeichert. Quellen: <a href="https://github.com/hermitdave/FrequencyWords">FrequencyWords</a> (Häufigkeit), <a href="https://github.com/davidak/wortliste">wortliste</a>, <a href="https://github.com/dwyl/english-words">english-words</a>, <a href="https://github.com/wooorm/dictionaries">wooorm/dictionaries</a>, <a href="https://github.com/Taknok/French-Wordlist">French-Wordlist</a>, <a href="https://github.com/hugovk/everyfinnishword">everyfinnishword</a>.</p>
+  </div>
+</div>
+
+<div class="overlay" id="statsModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <div id="getWell" class="get-well" hidden></div>
+    <div id="solutionBox" class="solution"></div>
+    <h2>Statistik</h2>
+    <div class="hint" id="statsMode"></div>
+    <div class="stats">
+      <div><div class="num" id="sPlayed">0</div><div class="lbl">Gespielt</div></div>
+      <div><div class="num" id="sWin">0</div><div class="lbl">% Gewonnen</div></div>
+      <div><div class="num" id="sStreak">0</div><div class="lbl">Serie</div></div>
+      <div><div class="num" id="sMax">0</div><div class="lbl">Beste Serie</div></div>
+    </div>
+    <h2>Verteilung</h2>
+    <div id="dist"></div>
+    <div class="actions">
+      <button class="btn secondary" id="shareBtn">Teilen</button>
+      <button class="btn" id="newBtn">Neues Wort</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
