@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marie-dle · Melodien</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/melody.js"></script>
+</head>
+<body class="melody">
+<header>
+  <div class="left">
+    <button class="icon-btn" id="menuBtn" aria-label="Modus wählen">☰ Modus</button>
+    <a class="icon-btn" href="index.html" title="Wörter raten" aria-label="Wörter raten">Aa</a>
+  </div>
+  <h1>MARIE-DLE</h1>
+  <div class="right">
+    <button class="icon-btn" id="helpBtn" aria-label="Hilfe">Hilfe</button>
+    <button class="icon-btn" id="statsBtn" aria-label="Statistik">Statistik</button>
+  </div>
+  <div id="modeLabel"></div>
+</header>
+
+<main>
+  <div id="board"></div>
+  <div id="pianoWrap">
+    <div class="kb-row controls">
+      <button class="key wide" id="listenBtn">▶ Melodie</button>
+      <button class="key wide" id="guessBtn">▶ Versuch</button>
+    </div>
+    <div id="piano"></div>
+    <div class="kb-row controls">
+      <button class="key wide" id="enterBtn">ENTER</button>
+      <button class="key wide" id="backBtn" aria-label="Löschen">⌫</button>
+    </div>
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<div class="overlay" id="menuModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <h2>Modus</h2>
+    <h3>Musik</h3>
+    <div class="seg" id="segCat"></div>
+    <h3>Schwierigkeit</h3>
+    <div class="seg" id="segLevel"></div>
+    <div class="hint" id="levelHint"></div>
+    <div class="actions">
+      <button class="btn" id="playBtn">Spielen</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="helpModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <h2>Melodien raten</h2>
+    <p>Hör dir mit <b>▶ Melodie</b> den Anfang eines bekannten Stücks an – so oft du willst – und spiel ihn auf der Klaviatur nach. Du hast 6 Versuche.</p>
+    <div class="example">
+      <div class="tile correct">E</div><div class="tile">Es</div><div class="tile">E</div><div class="tile">Es</div><div class="tile">E</div>
+    </div>
+    <p><b>E</b> ist der richtige Ton an der richtigen Stelle.</p>
+    <div class="example">
+      <div class="tile">G</div><div class="tile present">Fis</div><div class="tile">G</div><div class="tile">A</div><div class="tile">H</div>
+    </div>
+    <p><b>Fis</b> kommt in der Melodie vor, aber an einer anderen Stelle.</p>
+    <div class="example">
+      <div class="tile">C</div><div class="tile">D</div><div class="tile absent">B</div><div class="tile">D</div><div class="tile">C</div>
+    </div>
+    <p><b>B</b> kommt in der Melodie nicht vor.</p>
+    <p class="note">Es zählt nur der Tonname, nicht die Oktave. Deine Töne erklingen trotzdem in der Lage der Melodie, und mit <b>▶ Versuch</b> hörst du deine Zeile im Rhythmus des Originals.</p>
+    <p class="note">Unter <b>☰ Modus</b> wählst du Klassik, Pop oder beides und wie viele Töne du erraten musst: 5, 6, 8 oder bei <b>Max</b> die ganze Stelle. Jeder Modus hat eine eigene Tagesmelodie.</p>
+    <p class="note">Tastatur: Tasten <b>C D E F G A H</b> für die weißen Tasten, <b>B</b> für B, Leertaste spielt die Melodie, Enter prüft.</p>
+  </div>
+</div>
+
+<div class="overlay" id="statsModal">
+  <div class="modal">
+    <button class="icon-btn close" data-close>✕</button>
+    <div id="getWell" class="get-well" hidden></div>
+    <div id="solutionBox" class="solution"></div>
+    <h2>Statistik</h2>
+    <div class="hint" id="statsMode"></div>
+    <div class="stats">
+      <div><div class="num" id="sPlayed">0</div><div class="lbl">Gespielt</div></div>
+      <div><div class="num" id="sWin">0</div><div class="lbl">% Gewonnen</div></div>
+      <div><div class="num" id="sStreak">0</div><div class="lbl">Serie</div></div>
+      <div><div class="num" id="sMax">0</div><div class="lbl">Beste Serie</div></div>
+    </div>
+    <h2>Verteilung</h2>
+    <div id="dist"></div>
+    <div class="actions">
+      <button class="btn secondary" id="shareBtn">Teilen</button>
+      <button class="btn" id="newBtn">Neue Melodie</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

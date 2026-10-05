@@ -20,6 +20,12 @@ Dann <http://localhost:8000> öffnen. Ein Doppelklick auf `index.html` reicht ni
 
 Jeder Modus hat ein eigenes Tageswort und eine eigene Statistik. Danach kann man mit „Neues Wort“ beliebig weiterspielen.
 
+## Melodie-Modus
+
+Über 🎵 in der Kopfzeile (bzw. `melodie.html`) errät man statt eines Worts die ersten 5, 6 oder 8 Töne (oder bei „Max“ alle gespeicherten) einer bekannten Melodie auf einer Klaviatur. Gewertet wird nur der Tonname, nicht die Oktave. Die Töne erzeugt der Browser selbst (Web Audio API), es gibt keine Sounddateien.
+
+Die Melodien stehen in [`js/melodies.js`](js/melodies.js) als `"Ton:Dauer"`-Folgen (z. B. `"E5:0.25 D#5:0.25"`, Dauer in Vierteln). Sie wurden mit Online-Notenquellen abgeglichen und anschließend durchgehört. Neue Einträge brauchen mindestens 8 Töne.
+
 ## Gute-Besserungs-Nachrichten
 
 Bis einschließlich `GET_WELL_UNTIL` (in [`js/messages.js`](js/messages.js)) erscheint nach jedem gelösten Wort eine Gute-Besserungs-Nachricht im Statistik-Dialog. Sie wird zufällig gewählt und wiederholt sich erst, wenn alle einmal dran waren. `{word}` im Text wird durch das gelöste Wort ersetzt. Danach ist das Spiel wieder ein ganz normales Wordle.
@@ -50,6 +56,7 @@ Sonderzeichen: Ä, Ö und Ü (Deutsch) bzw. Ä und Ö (Finnisch) sind eigene Buc
 ```
 woertle/
 ├── index.html        Markup: Spielbrett, Tastatur, Dialoge
+├── melodie.html      Melodie-Modus
 ├── css/style.css     Layout, Farben (hell/dunkel), Animationen
 ├── js/
 │   ├── config.js     Sprachen, Tastaturen, Schwierigkeiten, Quell-URLs
