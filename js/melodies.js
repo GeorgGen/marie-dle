@@ -1,7 +1,8 @@
-// Melodien für den Melodie-Modus: Anfang bzw. bekanntester Hook als "Ton:Dauer".
+// Melodien für den Melodie-Modus: bekanntes Thema bzw. Hook als "Ton:Dauer".
 // Ton in wissenschaftlicher Notation (C4 = eingestrichenes c, nur Kreuze), Dauer in Vierteln.
-// Recherchiert und gegen Online-Quellen (IMSLP, Mutopia, Wikipedia, Notenseiten) geprüft,
+// Recherchiert und gegen Online-Quellen (IMSLP, Mutopia, Wikipedia, MIDI, Notenseiten) geprüft,
 // dann von Hand durchgehört. Neue Einträge brauchen mindestens 8 Töne.
+// max: wie viele Töne im Modus „Max“ geraten werden (sonst alle).
 
 export const MELODIES = [
   { id: "meditation-thais", cat: "classic", title: "Méditation (Thaïs)", by: "Jules Massenet", bpm: 60,
@@ -58,6 +59,16 @@ export const MELODIES = [
     notes: "F#5:2 B4:0.5 C#5:0.5 D5:0.5 E5:0.5 F#5:1.5 D5:0.5 F#5:1.5 D5:0.5 F#5:1.5 B4:0.5" },
   { id: "sarasate-carmen-fantasie", cat: "classic", title: "Carmen-Fantasie op. 25 – Habanera", by: "Pablo de Sarasate (nach Georges Bizet)", bpm: 72,
     notes: "D6:0.5 C#6:0.5 C6:1 B5:0.5 A#5:0.5 A5:1 G#5:0.5 G5:0.5" },
+  { id: "radetzky-marsch", cat: "classic", title: "Radetzky-Marsch", by: "Johann Strauss (Vater)", bpm: 108,
+    notes: "F#5:0.25 F5:0.25 F#5:0.25 F#5:0.25 F5:0.25 F#5:0.25 F#5:0.25 F5:0.25 F#5:0.25 E5:0.25 D5:0.25 F#5:0.25 F5:0.25 F#5:0.25" },
+  { id: "blaue-donau", cat: "classic", title: "An der schönen blauen Donau", by: "Johann Strauss (Sohn)", bpm: 170,
+    notes: "D4:1 D4:1 F#4:1 A4:1 A4:2 A5:1 A5:2 F#5:1 F#5:2 D4:1 D4:1 F#4:1 A4:1 A4:2 A5:1 A5:2" },
+  { id: "bach-cellosuite-1-prelude", cat: "classic", title: "Cellosuite Nr. 1, Prélude", by: "Johann Sebastian Bach", bpm: 72,
+    notes: "G2:0.25 D3:0.25 B3:0.25 A3:0.25 B3:0.25 D3:0.25 B3:0.25 D3:0.25 G2:0.25 D3:0.25 B3:0.25 A3:0.25 B3:0.25 D3:0.25 B3:0.25 D3:0.25" },
+  { id: "comptine-ete", cat: "classic", title: "Comptine d'un autre été: L'après-midi", by: "Yann Tiersen", bpm: 140,
+    notes: "G4:0.25 F#4:0.25 G4:0.5 B4:0.25 C5:0.25 B4:1.5 F#4:0.25 G4:0.25 F#4:0.5 G4:0.25 A4:0.25 G4:1.5" },
+  { id: "bad-romance", cat: "pop", title: "Bad Romance", by: "Lady Gaga", bpm: 119,
+    notes: "A4:1 A4:1 E5:0.5 E5:0.5 F5:0.5 E5:1 A4:1 A4:1 E5:0.5 E5:0.5 F5:0.5 E5:1 A4:1 A4:1 E5:0.5 E5:0.5" },
   { id: "love-story", cat: "pop", title: "Love Story", by: "Taylor Swift", bpm: 119,
     notes: "F#4:0.5 F#4:0.5 D4:0.5 D4:0.5 D4:0.5 G4:1.5 F#4:0.5 D4:0.5 D4:0.5 E4:0.5 E4:0.5 D4:0.5" },
   { id: "blank-space", cat: "pop", title: "Blank Space", by: "Taylor Swift", bpm: 96,
@@ -72,4 +83,10 @@ export const MELODIES = [
     notes: "D#4:0.5 F4:0.5 G4:0.5 A#4:1 G4:0.5 A#4:0.5 C5:0.5 D#5:1 F5:0.5 F5:0.5 D#5:1.5" },
   { id: "nur-ein-wort", cat: "pop", title: "Nur ein Wort", by: "Wir Sind Helden", bpm: 185,
     notes: "F#4:0.5 D#4:1 E4:1 D#4:1.5 C#4:1 B3:1 A#3:1 F#4:0.5 D#4:1 E4:1 D#4:1.5 C#4:1" },
+  { id: "sweet-child-o-mine", cat: "pop", title: "Sweet Child O' Mine", by: "Guns N' Roses", bpm: 125,
+    notes: "C#4:0.5 C#5:0.5 G#4:0.5 F#4:0.5 F#5:0.5 G#4:0.5 F5:0.5 G#4:0.5 C#4:0.5 C#5:0.5 G#4:0.5 F#4:0.5 F#5:0.5 G#4:0.5 F5:0.5 G#4:0.5" },
+  { id: "take-on-me", cat: "pop", title: "Take On Me", by: "a-ha", bpm: 169,
+    notes: "F#5:0.5 F#5:0.5 D5:0.5 B4:1 B4:1 E5:1 E5:1 E5:0.5 G#5:0.5 G#5:0.5 A5:0.5 B5:0.5 A5:0.5 A5:0.5 A5:0.5 E5:1" },
+  { id: "seven-nation-army", cat: "pop", title: "Seven Nation Army", by: "The White Stripes", bpm: 124,
+    notes: "E3:1.5 E3:0.5 G3:0.75 E3:0.75 D3:0.5 C3:2 B2:2 E3:1.5 E3:0.5 G3:0.75 E3:0.75 D3:0.5 C3:1" },
 ];

@@ -40,7 +40,7 @@ const LEVELS = {
   5: { name: "Leicht", hint: "Die ersten 5 Töne." },
   6: { name: "Mittel", hint: "Die ersten 6 Töne." },
   8: { name: "Schwer", hint: "Die ersten 8 Töne." },
-  max: { name: "Max", hint: "Die ganze gespeicherte Stelle (8–16 Töne, je nach Stück)." }
+  max: { name: "Max", hint: "Die ganze Stelle (8–16 Töne, je nach Stück)." }
 };
 const DEFAULT_MODE = { cat: "all", len: 6 };
 const PROGRESS_KEY = "marie-dle-melodie-v1";
@@ -61,8 +61,12 @@ let animating = false;
 let statsTimer = null;
 
 const tune = () => TUNES[game.solution];
-// Anzahl der zu ratenden Töne: fest je Stufe, bei „Max“ die ganze gespeicherte Stelle.
-const lenOf = (g = game) => mode.len === "max" ? TUNES[g.solution].notes.length : mode.len;
+// Anzahl der zu ratenden Töne: fest je Stufe, bei „Max“ die ganze Stelle (bzw. bis `max`).
+const lenOf = (g = game) => {
+  if (mode.len !== "max") return mode.len;
+  const t = TUNES[g.solution];
+  return Math.min(t.max || t.notes.length, t.notes.length);
+};
 const target = (g = game) => TUNES[g.solution].notes.slice(0, lenOf(g));
 const solution = (g = game) => target(g).map(n => PCS[n.midi % 12]);
 

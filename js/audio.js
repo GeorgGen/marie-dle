@@ -56,7 +56,8 @@ export function playSequence(notes, bpm, onStep = () => {}) {
   let t = c.currentTime + 0.08, ms = 80;
   notes.forEach((n, i) => {
     const len = Math.min(Math.max(n.dur * beat, 0.09), 1.6);
-    tone(n.midi, t, len);
+    // Der letzte Ton klingt aus, statt mitten in der Phrase abzubrechen.
+    tone(n.midi, t, i === notes.length - 1 ? Math.max(len, 1.2) : len);
     timers.push(setTimeout(() => onStep(i), ms));
     t += len;
     ms += len * 1000;
