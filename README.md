@@ -16,7 +16,7 @@ Dann <http://localhost:8000> öffnen. Ein Doppelklick auf `index.html` reicht ni
 |---|---|
 | Sprache | Deutsch, Englisch, Finnisch, Französisch |
 | Wortlänge | 4, 5, 6, 7 |
-| Schwierigkeit | Leicht, Mittel, Schwer: Lösungen aus den 4.000, 20.000 bzw. 100.000 häufigsten Wörtern |
+| Schwierigkeit | Leicht, Mittel, Schwer: Lösungen aus den 3.000, 15.000 bzw. 60.000 häufigsten Wörtern |
 
 Jeder Modus hat ein eigenes Tageswort und eine eigene Statistik. Danach kann man mit „Neues Wort“ beliebig weiterspielen. Im Statistik-Dialog zeigt der Reiter „Gesamt“ einen Vergleich über alle Modi: Wörter gegen Melodien, Sprachen, Wortlängen und Schwierigkeitsstufen (Spiele, Gewinnquote, Ø Versuche).
 
@@ -44,8 +44,8 @@ Beim ersten Start einer Sprache lädt das Spiel die Listen direkt von GitHub. Da
 | Französisch | FrequencyWords | Hunspell + [French-Wordlist](https://github.com/Taknok/French-Wordlist) | Hunspell |
 
 - **Lösungswort:** ein Wort aus der Häufigkeitsliste, bis zum Rang der gewählten Schwierigkeit, das den Filter besteht.
-- **Erlaubter Rateversuch:** jedes Wort aus der Häufigkeitsliste (Top 100.000) oder dem Wörterbuch.
-- Von den vollständigen Häufigkeitslisten (10–40 MB) werden nur die ersten 100.000 Zeilen gestreamt, das sind etwa 1,3 MB.
+- **Erlaubter Rateversuch:** jedes Wort aus der Häufigkeitsliste (Top 60.000) oder dem Wörterbuch.
+- Von den vollständigen Häufigkeitslisten (10–40 MB) werden nur die ersten 60.000 Zeilen gestreamt, das sind etwa 0,8 MB.
 - Alle URLs zeigen auf feste Commits statt auf `master`/`main`. So bekommen alle Spieler:innen dieselben Listen und damit dieselben Tageswörter.
 - Unvollständige Downloads (z. B. eine WLAN-Login-Seite statt der Liste) werden erkannt und nicht gespeichert.
 

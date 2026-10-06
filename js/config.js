@@ -11,9 +11,9 @@ export const ROWS = 6;
 export const LENGTHS = [4, 5, 6, 7];
 
 export const DIFFS = {
-  easy:   { name: "Leicht", top: 4000 },
-  medium: { name: "Mittel", top: 20000 },
-  hard:   { name: "Schwer", top: 100000 }
+  easy:   { name: "Leicht", top: 3000 },
+  medium: { name: "Mittel", top: 15000 },
+  hard:   { name: "Schwer", top: 60000 }
 };
 
 // Wie viele Zeilen der Häufigkeitsliste geladen werden (= größte Stufe).
