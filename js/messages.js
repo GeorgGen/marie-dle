@@ -13,13 +13,13 @@ export const MESSAGE_SETS = {
   marie: [
     "Gute Besserung, Marie!",
     "Du bist toll!",
-    "Wenn Rätselraten Medizin wäre, wärst du jetzt schon fast wieder fit. 💊😄",
+    "Wenn Rätselraten Medizin wäre, wärst du jetzt schon fast wieder fit. 💊",
     "Gelöst! 🎉 Dein Immunsystem hat gerade angerufen und gefragt, ob du ihm auch so schnell helfen kannst.",
     "Ich finde dich so unfassbar schlau und intelligent, Marie!",
     "Du beeindruckst mich jeden Tag aufs Neue!",
-    "Das war beeindruckend! Gönn deinem Kopf jetzt eine Pause – er hat sich Tee verdient. 🫖",
+    "Das war beeindruckend! Gönn deinem Kopf jetzt eine Pause, er hat sich Tee verdient. 🫖",
     "Glückwunsch! Hier ist eine virtuelle Umarmung (garantiert virenfrei). 🤗",
-    "{word}! Wie machst du das bloß – mit Fieber? Stell dir vor, was du erst gesund kannst.",
+    "{word}! Wie machst du das bloß mit Fieber? Stell dir vor, was du erst gesund kannst.",
     "Du würdest Wir Sind Helden bestimmt ein Wort geben!"
   ],
 

@@ -270,3 +270,21 @@ a.icon-btn { text-decoration: none; display: inline-block; }
 /* Schwarze Tasten behalten ihren Rand, damit sie sich auch gefärbt von den weißen abheben. */
 .pkey.black { border: 2px solid #1a1a1b; border-top: none; }
 .pkey.black.correct, .pkey.black.present { box-shadow: inset 0 -4px 0 rgba(0,0,0,0.35); }
+
+/* ---------- Statistik: Reiter und Gesamtvergleich ---------- */
+.seg.tabs { margin: 0 28px 16px 0; }
+.seg.tabs button { padding: 7px 8px; font-size: 0.85rem; }
+#statsModeView[hidden], #statsAllView[hidden] { display: none; }
+.ov-block { margin-bottom: 14px; }
+.ov-block h3 { margin: 10px 0 6px; }
+.ov-row {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) 3.2em minmax(0, 1.6fr) 3.4em;
+  gap: 6px; align-items: center; font-size: 0.85rem; margin: 3px 0;
+}
+.ov-head { font-size: 0.7rem; color: var(--muted); }
+.ov-head span:nth-child(2), .ov-head span:nth-child(4), .ov-num { text-align: right; }
+.ov-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-num { font-variant-numeric: tabular-nums; }
+.ov-bar { position: relative; height: 18px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.ov-fill { position: absolute; inset: 0 auto 0 0; background: var(--correct); }
+.ov-bar span { position: relative; padding-left: 6px; font-size: 0.75rem; font-weight: bold; line-height: 18px; color: var(--fg); }

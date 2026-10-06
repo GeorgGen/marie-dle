@@ -2,6 +2,7 @@
 
 import { ROWS, LANGS, LENGTHS, DIFFS } from "./config.js";
 import { score, keyStates } from "./game.js";
+import { renderOverview } from "./overview.js";
 
 export const $ = id => document.getElementById(id);
 
@@ -143,7 +144,20 @@ document.querySelectorAll(".overlay").forEach(o => {
   });
 });
 
+// Statistik-Dialog: Reiter „Dieser Modus“ und „Gesamt“ (Vergleich über alle Modi).
+export function showStatsTab(tab) {
+  $("statsTabs").querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+  $("statsModeView").hidden = tab !== "mode";
+  $("statsAllView").hidden = tab !== "all";
+  if (tab === "all") renderOverview($("statsAllView"));
+}
+
+$("statsTabs").querySelectorAll("button").forEach(b => {
+  b.addEventListener("click", () => showStatsTab(b.dataset.tab));
+});
+
 export function renderStats(stats, game, label) {
+  showStatsTab("mode");
   $("statsMode").textContent = label;
   $("sPlayed").textContent = stats.played;
   $("sWin").textContent = stats.played ? Math.round(100 * stats.wins / stats.played) : 0;

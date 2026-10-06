@@ -79,6 +79,11 @@
 <div class="overlay" id="statsModal">
   <div class="modal">
     <button class="icon-btn close" data-close>✕</button>
+    <div class="seg tabs" id="statsTabs">
+      <button data-tab="mode" class="active">Dieser Modus</button>
+      <button data-tab="all">Gesamt</button>
+    </div>
+    <div id="statsModeView">
     <div id="getWell" class="get-well" hidden></div>
     <div id="solutionBox" class="solution"></div>
     <h2>Statistik</h2>
@@ -91,6 +96,8 @@
     </div>
     <h2>Verteilung</h2>
     <div id="dist"></div>
+    </div>
+    <div id="statsAllView" hidden></div>
     <div class="actions">
       <button class="btn secondary" id="shareBtn">Teilen</button>
       <button class="btn" id="newBtn">Neue Melodie</button>
