@@ -18,13 +18,13 @@ Dann <http://localhost:8000> öffnen. Ein Doppelklick auf `index.html` reicht ni
 | Wortlänge | 4, 5, 6, 7 |
 | Schwierigkeit | Leicht, Mittel, Schwer: Lösungen aus den 4.000, 20.000 bzw. 100.000 häufigsten Wörtern |
 
-Jeder Modus hat ein eigenes Tageswort und eine eigene Statistik. Danach kann man mit „Neues Wort“ beliebig weiterspielen.
+Jeder Modus hat ein eigenes Tageswort und eine eigene Statistik. Danach kann man mit „Neues Wort“ beliebig weiterspielen. Im Statistik-Dialog zeigt der Reiter „Gesamt“ einen Vergleich über alle Modi: Wörter gegen Melodien, Sprachen, Wortlängen und Schwierigkeitsstufen (Spiele, Gewinnquote, Ø Versuche).
 
 ## Melodie-Modus
 
 Über 🎵 in der Kopfzeile (bzw. `melodie.html`) errät man statt eines Worts die ersten 5, 6 oder 8 Töne (oder bei „Max“ alle gespeicherten) einer bekannten Melodie auf einer Klaviatur. Gewertet wird nur der Tonname, nicht die Oktave. Die Töne erzeugt der Browser selbst (Web Audio API), es gibt keine Sounddateien.
 
-Die Melodien stehen in [`js/melodies.js`](js/melodies.js) als `"Ton:Dauer"`-Folgen (z. B. `"E5:0.25 D#5:0.25"`, Dauer in Vierteln). Sie wurden mit Online-Notenquellen abgeglichen und anschließend durchgehört. Neue Einträge brauchen mindestens 8 Töne.
+Die Melodien stehen in [`js/melodies.js`](js/melodies.js) als `"Ton:Dauer"`-Folgen (z. B. `"E5:0.25 D#5:0.25"`, Dauer in Vierteln). Jede Melodie reicht bis zum Ende ihrer ersten musikalischen Phrase; `max` legt fest, wie viele Töne davon im Modus „Max“ geraten werden. Die Melodien wurden mit Online-Notenquellen abgeglichen und anschließend durchgehört. Neue Einträge brauchen mindestens 8 Töne.
 
 ## Gute-Besserungs-Nachrichten
 
@@ -65,7 +65,11 @@ woertle/
 │   ├── messages.js   Gute-Besserungs-Nachrichten und bis wann sie erscheinen
 │   ├── game.js       Reine Spiellogik: Wertung, Tageswort, Statistik
 │   ├── ui.js         DOM: Brett, Tastatur, Toasts, Dialoge
-│   └── main.js       Einstiegspunkt, verbindet alles
+│   ├── overview.js   Gesamtstatistik über alle Modi
+│   ├── main.js       Einstiegspunkt Wörter, verbindet alles
+│   ├── melody.js     Einstiegspunkt Melodie-Modus
+│   ├── melodies.js   Melodien (Töne und Dauern)
+│   └── audio.js      Klangerzeugung (Web Audio API)
 └── serve.sh          Lokaler Webserver
 ```
 
